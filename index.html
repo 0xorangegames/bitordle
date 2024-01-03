@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JEWNHYF56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9JEWNHYF56');
+</script>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <title>BitOrdLe by Orange Games</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: orange;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .square {
+            position: absolute;
+            background-color: darkorange;
+        }
+
+.square1 { width: 100px; height: 100px; top: 20%; left: 30%; }
+.square2 { width: 150px; height: 150px; top: 50%; left: 60%; }
+.square3 { width: 200px; height: 200px; top: 70%; left: 10%; }
+.square4 { width: 80px; height: 80px; top: 5%; left: 70%; }
+.square5 { width: 120px; height: 120px; top: 30%; left: 10%; }
+.square6 { width: 50px; height: 50px; top: 50%; left: 80%; }
+.square7 { width: 220px; height: 220px; top: 40%; left: 30%; }
+.square8 { width: 90px; height: 90px; top: 10%; left: 20%; }
+.square9 { width: 110px; height: 110px; top: 60%; left: 90%; }
+.square10 { width: 70px; height: 70px; top: 15%; left: 40%; }
+.square11 { width: 130px; height: 130px; top: 85%; left: 50%; }
+.square12 { width: 60px; height: 60px; top: 25%; left: 75%; }
+.square13 { width: 140px; height: 140px; top: 55%; left: 5%; }
+.square14 { width: 95px; height: 95px; top: 35%; left: 65%; }
+.square15 { width: 65px; height: 65px; top: 10%; left: 15%; }
+.square16 { width: 85px; height: 85px; top: 20%; left: 25%; }
+.square17 { width: 75px; height: 75px; top: 30%; left: 35%; }
+.square18 { width: 95px; height: 95px; top: 40%; left: 45%; }
+.square19 { width: 55px; height: 55px; top: 50%; left: 55%; }
+.square20 { width: 45px; height: 45px; top: 60%; left: 65%; }
+.square21 { width: 35px; height: 35px; top: 70%; left: 75%; }
+.square22 { width: 25px; height: 25px; top: 80%; left: 85%; }
+.square23 { width: 15px; height: 15px; top: 90%; left: 95%; }
+.square24 { width: 50px; height: 50px; top: 10%; left: 85%; }
+
+        .game-container {
+            width: 600px;
+            height: 600px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #gameArea { 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-top: 20px; 
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .cell { 
+            width: 40px; 
+            height: 40px; 
+            border: 2px solid #777; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-right: 5px; 
+            font-size: 20px; 
+            text-transform: uppercase; 
+            color: black;
+        }
+
+        .correct { background-color: orange; }
+        .present { background-color: yellow; }
+        .absent { background-color: gray; }
+
+        .keyboard { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            max-width: 300px; 
+            margin-top: 20px; 
+        }
+
+        .key { 
+            width: 20px; 
+            height: 20px; 
+            border: 1px solid #777; 
+            margin: 3px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            user-select: none; 
+            color: white;
+        }
+
+        .used { background-color: gray; }
+        .external-link a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        .external-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="square square1"></div>
+    <div class="square square2"></div>
+    <div class="square square3"></div>
+    <div class="square square4"></div>
+    <div class="square square5"></div>
+    <div class="square square6"></div>
+    <div class="square square7"></div>
+    <div class="square square8"></div>
+    <div class="square square9"></div>
+    <div class="square square10"></div>
+    <div class="square square11"></div>
+    <div class="square square12"></div>
+    <div class="square square13"></div>
+    <div class="square square14"></div>
+    <div class="square square15"></div>
+    <div class="square square16"></div>
+    <div class="square square17"></div>
+    <div class="square square18"></div>
+    <div class="square square19"></div>
+    <div class="square square20"></div>
+    <div class="square square21"></div>
+    <div class="square square22"></div>
+    <div class="square square23"></div>
+    <div class="square square24"></div>
+
+    <div class="game-container">
+        <h2>BitOrdLe</h2>
+        <div id="gameArea"></div>
+        <p id="message"></p>
+        <div id="keyboard" class="keyboard"></div>
+        <p class="external-link"><a href="https://magiceden.io/ordinals/item-details/525f691453885e820764e8679f2578c6294f709e0c3161c8e7b3551c3c4eee6fi0" target="_blank"><b>This game is inscribed on a rare sat mined by Satoshi Nakamoto in 2009. Collect it!</b></a></p>
+
+    </div>
+
+    <script>
+        const words = [
+    "block", "chain", "miner", "token", "trade", "index", "asset", "stock", "price",
+    "cycle", "scope", "scale", "value", "shift", "proof", "fiats", "stake", "yield",
+    "layer", "trend", "chart", "trust", "bulls", "bears", "coins", "funds", "gains",
+    "pumps", "whale", "peaks", "dumps", "hedge", "short", "longs", "crash", "moons",
+    "rally", "spike", "waves", "halve", "nodes", "swaps", "deals", "bonus", "solid",
+    "spend", "forks", "chips", "bytes", "codes", "robot", "logic", "ranks", "units",
+    "array", "brute", "cache", "cloud", "feeds", "fiber", "icons", "ideas", "joins",
+    "knots", "links", "media", "burst", "ports", "query", "route", "usage", "virus",
+    "wires", "smart", "alpha", "bravo", "chats", "debug", "email", "files", "guild",
+    "hosts", "claim", "degen", "macro", "nerds", "proxy", "repos", "sigma", "tools", 
+    "users", "angel", "yield", "ether", "audit", "batch", "decks", "erase", "fetch", 
+    "grant", "hexes", "items", "track", "build", "merge", "nifty", "pipes", "quads", 
+    "renew", "solve", "tiers", "unzip", "vault", "limit", "banks", "zeros", "stamp", "eigen","cobol","modem","ascii","risky","jpegs","cyber","stock"];
+        let currentWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
+        let currentAttempt = 0;
+
+        function createGrid() {
+            const gameArea = document.getElementById('gameArea');
+            gameArea.innerHTML = '';
+            for (let i = 0; i < 6; i++) {
+                let row = document.createElement('div');
+                row.className = 'row';
+                for (let j = 0; j < 5; j++) {
+                    let cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.setAttribute('contenteditable', true);
+                    cell.addEventListener('keydown', (e) => handleKeydown(e, cell, j));
+                    row.appendChild(cell);
+                }
+                gameArea.appendChild(row);
+            }
+        }
+
+        function handleKeydown(event, cell, colIndex) {
+    if (event.key === 'Backspace' && cell.textContent === '' && colIndex > 0) {
+        cell.previousElementSibling.focus();
+    }
+    setTimeout(() => {
+        cell.textContent = cell.textContent.toUpperCase();
+        if (cell.textContent.length > 1) {
+            cell.textContent = cell.textContent[0];
+        }
+        if (colIndex < 4 && event.key !== 'Backspace') {
+            cell.nextElementSibling.focus();
+        }
+        if (colIndex === 4 && event.key === 'Enter') {
+            submitGuess();
+        }
+    }, 0);
+}
+
+function createKeyboard() {
+    const keys = "QWERTYUIOPASDFGHJKLZXCVBNM".split('');
+    const keyboard = document.getElementById('keyboard');
+    keys.forEach(key => {
+        const keyDiv = document.createElement('div');
+        keyDiv.textContent = key;
+        keyDiv.className = 'key';
+        keyDiv.dataset.key = key;
+        keyDiv.addEventListener('click', () => keyClick(key));
+        keyboard.appendChild(keyDiv);
+    });
+}
+
+function keyClick(key) {
+    const activeRow = document.getElementsByClassName('row')[currentAttempt];
+    const emptyCell = Array.from(activeRow.children).find(cell => cell.textContent === '');
+    if (emptyCell) {
+        emptyCell.textContent = key;
+        handleKeydown({ key: key }, emptyCell, Array.from(activeRow.children).indexOf(emptyCell));
+    }
+}
+
+function submitGuess() {
+    const guess = Array.from(document.getElementsByClassName('row')[currentAttempt].children).map(cell => cell.textContent).join('');
+    if (guess.length === 5) {
+        let tempWord = currentWord;
+        Array.from(document.getElementsByClassName('row')[currentAttempt].children).forEach((cell, i) => {
+            if (guess[i] === currentWord[i]) {
+                cell.className = 'cell correct';
+                tempWord = tempWord.replace(guess[i], ' '); 
+            }
+        });
+
+        Array.from(document.getElementsByClassName('row')[currentAttempt].children).forEach((cell, i) => {
+            if (cell.className !== 'cell correct') {
+                if (tempWord.includes(guess[i])) {
+                    cell.className = 'cell present';
+                    tempWord = tempWord.replace(guess[i], ' ');
+                } else {
+                    cell.className = 'cell absent';
+                }
+            }
+            document.querySelector(`.key[data-key='${guess[i]}']`).classList.add('used');
+        });
+
+        if (++currentAttempt === 6 && guess !== currentWord) {
+            document.getElementById('message').textContent = `Game Over. The word was: ${currentWord}`;
+        } else if (currentAttempt < 6) {
+            document.getElementsByClassName('row')[currentAttempt].children[0].focus();
+        }
+    }
+}
+
+        createGrid();
+        createKeyboard();
+    </script>
+</body>
+</html>
